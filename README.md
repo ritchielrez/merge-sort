@@ -4,6 +4,45 @@
 It is a stable sorting algorithm, with *time complexity* of `O(Nlog(N))`. It does also take some extra space  
 to split the array up to 2 subarrays then sort and merge them back together.
 
+Here is a chart below to explain the algorithm:
+
+```mermaid
+flowchart TD
+     id1[1 8 3 9 4 5 7] --> id2[1 8 3 9] --> id4[1 8]
+
+     id4[1 8] --> id7[1]
+     id4[1 8] --> id8[8]
+
+     id7[1] --> id11[1 8]
+     id8[8] --> id11[1 8]
+
+     id2[1 8 3 9] --> id5[3 9]
+
+     id5[3 9] --> id9[3]
+     id5[3 9] --> id10[9]
+
+     id9[3] --> id12[3 9]
+     id10[9] --> id12[3 9]
+
+     id11[1 8] --> id18[1 3 8 9]
+     id12[3 9] ---> id18[1 3 8 9]
+
+     id1[1 8 3 9 4 5 7] --> id3[4 5 7]
+
+     id3[4 5 7] --> id13[4]
+     id3[4 5 7] --> id14[5]
+     id3[4 5 7] --> id15[7]
+
+     id14[5] --> id16[5 7]
+     id15[7] --> id16[5 7]
+
+     id13[4] --> id17[4 5 7]
+     id16[5 7] --> id17[4 5 7]
+
+     id18[1 3 8 9] --> id20[1 3 4 5 7 8 9]
+     id17[4 5 7] --> id20[1 3 4 5 7 8 9]
+```
+
 ### Some *advantages* of **merge sort** are:
 
 #### 1. It is a stable sorting algorithm:
