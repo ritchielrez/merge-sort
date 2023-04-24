@@ -19,7 +19,7 @@ jobs:
       - name: configure cmake
         # configure cmake in a 'build' subdirectory. `cmake_build_type` is only required if you are using a single-configuration generator such as make.
         # see https://cmake.org/cmake/help/latest/variable/cmake_build_type.html?highlight=cmake_build_type
-        run: cmake -b ${{github.workspace}}/build -dcmake_build_type=${{env.build_type}}
+        run: cmake -b ${{github.workspace}}/build
       - name: build
         # build your program with the given configuration
         run: cmake --build ${{github.workspace}}/build --config ${{env.build_type}}
