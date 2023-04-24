@@ -8,9 +8,12 @@ jobs:
   # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
   # You can convert this to a matrix build if you need cross-platform coverage.
   # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-  Run-cmake-on-Ubuntu:
-    name: Run cmake on Ubuntu
-    runs-on: ubuntu-latest
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v3
       - name: configure cmake
