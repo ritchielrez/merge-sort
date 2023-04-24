@@ -1,0 +1,3 @@
+/home/ritux/dev/merge-sort/build/CMakeFiles/main.dir
+/home/ritux/dev/merge-sort/build/CMakeFiles/edit_cache.dir
+/home/ritux/dev/merge-sort/build/CMakeFiles/rebuild_cache.dir
